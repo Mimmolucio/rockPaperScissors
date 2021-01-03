@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+    let computer = computerPlay();
+    let human = humanPlay();
+
+    function computerPlay() {
+      let computerPull = Math.floor(Math.random() * 2);
+      switch(computerPull) {
+        case 0:
+          computerPull = 'Rock';
+          break;
+        case 1:
+          computerPull = 'Scissors';
+          break;
+        case 2:
+          computerPull = 'Paper';
+          break;
+      }
+        return computerPull;
+    }
+    function humanPlay() {
+      let humanPull = window.prompt('Choose Rock 0, Scissors 1 or Paper 2');
+        switch(humanPull) {
+          case 0:
+            humanPull = 'Rock';
+            break;
+          case 1:
+            humanPull = 'Scissors';
+            break;
+          case 2:
+            humanPull = 'Paper';
+            break;
+          default:
+            window.alert('Entered wrong value, try again!');
+            humanPlay();
+        }
+      return humanPull;
+    }
+
+    function comparison() {
+      let result;
+      if (human = 'Rock') && (computer = 'Paper') {
+        result = 0;
+      }
+      else if (human = 'Rock') && (computer = 'Scissors') {
+        result = 1;
+      }
+      else if (human = 'Rock') && (computer = 'Rock') {
+        result = 2;
+      }
+      else if (human = 'Scissors') && (computer = 'Rock) {
+        result = 0;
+      }
+      else if (human = 'Scissors') && (computer = 'Paper') {
+        result = 1;
+      }
+      else if (human = 'Scissors') && (computer = 'Scissors') {
+        result = 2;
+      }
+      else if (human = 'Paper') && (computer = 'Rock') {
+        result = 1;
+      }
+      else if (human = 'Paper') && (computer = 'Scissors') {
+        result = 0;
+      }
+      else if (human = 'Paper') && (computer = 'Paper') {
+        result = 2;
+      }
+    return result;
+  }
+
+
+
+  
+            
+      
+  </script>
+</body>
+</html>
