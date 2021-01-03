@@ -6,8 +6,12 @@
 </head>
 <body>
   <script>
+	window.alert('Welcome');
     let computer = computerPlay();
     let human = humanPlay();
+	let counterComp = 0;
+	let counterHum = 0;
+	window.alert(comparison());
 
     function computerPlay() {
       let computerPull = Math.floor(Math.random() * 2);
@@ -24,16 +28,17 @@
       }
         return computerPull;
     }
+	
     function humanPlay() {
-      let humanPull = window.prompt('Choose Rock 0, Scissors 1 or Paper 2');
+      let humanPull = window.prompt("Lets Play Rock, Paper, Scissors! Choose Rock 0, Scissors 1 or Paper 2");
         switch(humanPull) {
-          case 0:
+          case '0':
             humanPull = 'Rock';
             break;
-          case 1:
+          case '1':
             humanPull = 'Scissors';
             break;
-          case 2:
+          case '2':
             humanPull = 'Paper';
             break;
           default:
@@ -45,41 +50,42 @@
 
     function comparison() {
       let result;
-      if (human = 'Rock') && (computer = 'Paper') {
-        result = 0;
+      if (human == 'Rock' && computer == 'Paper') {
+        result = "You Lose";
+		++counterComp
       }
-      else if (human = 'Rock') && (computer = 'Scissors') {
-        result = 1;
+      else if (human == 'Rock' && computer == 'Scissors') {
+        result = "You Win";
+		++counterHum
       }
-      else if (human = 'Rock') && (computer = 'Rock') {
-        result = 2;
+      else if (human == 'Rock' && computer == 'Rock') {
+        result = "Tie";
       }
-      else if (human = 'Scissors') && (computer = 'Rock) {
-        result = 0;
+      else if (human == 'Scissors' && computer == 'Rock') {
+        result = "You Lose";
+		++counterComp
+
       }
-      else if (human = 'Scissors') && (computer = 'Paper') {
-        result = 1;
+      else if (human == 'Scissors' && computer == 'Paper') {
+        result = "You Win";
+		++counterHum
       }
-      else if (human = 'Scissors') && (computer = 'Scissors') {
-        result = 2;
+      else if (human == 'Scissors' && computer == 'Scissors') {
+        result = "Tie";
       }
-      else if (human = 'Paper') && (computer = 'Rock') {
-        result = 1;
+      else if (human == 'Paper' && computer == 'Rock') {
+        result = "You Win";
+		++counterHum
       }
-      else if (human = 'Paper') && (computer = 'Scissors') {
-        result = 0;
+      else if (human == 'Paper' && computer == 'Scissors') {
+        result = "You Lose";
+		++counterComp
       }
-      else if (human = 'Paper') && (computer = 'Paper') {
-        result = 2;
+      else if (human == 'Paper' && computer == 'Paper') {
+        result = "Tie";
       }
     return result;
   }
-
-
-
-  
-            
-      
   </script>
 </body>
-</html>
+</html
