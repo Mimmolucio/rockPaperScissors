@@ -6,12 +6,23 @@
 </head>
 <body>
   <script>
-	window.alert('Welcome');
-    let computer = computerPlay();
-    let human = humanPlay();
-	let counterComp = 0;
+    let counterComp = 0;
 	let counterHum = 0;
-	window.alert(comparison());
+	let human;
+	let computer;
+	window.alert('Welcome');
+    
+	for(counterHum, counterComp; counterComp < 5 && counterHum < 5;) {
+      computer = computerPlay();
+      human = humanPlay();
+  	  window.alert(comparison());
+	}
+	if (counterHum < counterComp) {
+	  window.alert("You lose all");
+	}
+	else {
+	  window.alert("You win all");
+	}
 
     function computerPlay() {
       let computerPull = Math.floor(Math.random() * 2);
@@ -52,38 +63,40 @@
       let result;
       if (human == 'Rock' && computer == 'Paper') {
         result = "You Lose";
-		++counterComp
+		counterComp++
       }
       else if (human == 'Rock' && computer == 'Scissors') {
         result = "You Win";
-		++counterHum
+		counterHum++
       }
       else if (human == 'Rock' && computer == 'Rock') {
         result = "Tie";
       }
       else if (human == 'Scissors' && computer == 'Rock') {
         result = "You Lose";
-		++counterComp
+		counterComp++
 
       }
       else if (human == 'Scissors' && computer == 'Paper') {
         result = "You Win";
-		++counterHum
+		counterHum++
       }
       else if (human == 'Scissors' && computer == 'Scissors') {
         result = "Tie";
       }
       else if (human == 'Paper' && computer == 'Rock') {
         result = "You Win";
-		++counterHum
+		counterHum++
       }
       else if (human == 'Paper' && computer == 'Scissors') {
         result = "You Lose";
-		++counterComp
+		counterComp++
       }
       else if (human == 'Paper' && computer == 'Paper') {
         result = "Tie";
       }
+	  console.log(counterComp);
+	  console.log(counterHum);
     return result;
   }
   </script>
