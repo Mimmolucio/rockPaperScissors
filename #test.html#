@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+   
+<head>
+  <title>Page Title</title>
+  <meta charset="UTF-8" />
+</head>
+//edit
+<body>
+  <script>
+    let counterComp = 0;
+    let counterHum = 0;
+    let human;
+    let computer;
+    window.alert('Welcome');
+
+    for (counterHum, counterComp; counterComp < 5 && counterHum < 5;) {
+      computer = computerPlay();
+      human = humanPlay();
+      window.alert(comparison());
+    }
+    if (counterHum < counterComp) {
+      window.alert("You lose all");
+    }
+    else {
+      window.alert("You win all");
+    }
+
+    function computerPlay() {
+      let computerPull = Math.floor(Math.random() * 2);
+      switch (computerPull) {
+        case 0:
+          computerPull = 'Rock';
+          break;
+        case 1:
+          computerPull = 'Scissors';
+          break;
+        case 2:
+          computerPull = 'Paper';
+          break;
+      }
+      return computerPull;
+    }
+
+    function humanPlay() {
+      let humanPull = window.prompt("Lets Play Rock, Paper, Scissors! Choose Rock 0, Scissors 1 or Paper 2");
+      switch (humanPull) {
+        case '0':
+          humanPull = 'Rock';
+          break;
+        case '1':
+          humanPull = 'Scissors';
+          break;
+        case '2':
+          humanPull = 'Paper';
+          break;
+        default:
+          window.alert('Entered wrong value, try again!');
+          humanPlay();
+      }
+      return humanPull;
+    }
+
+    function comparison() {
+      let result;
+      if (human == 'Rock' && computer == 'Paper') {
+        result = "You Lose";
+        counterComp++
+      }
+      else if (human == 'Rock' && computer == 'Scissors') {
+        result = "You Win";
+        counterHum++
+      }
+      else if (human == 'Rock' && computer == 'Rock') {
+        result = "Tie";
+      }
+      else if (human == 'Scissors' && computer == 'Rock') {
+        result = "You Lose";
+        counterComp++
+
+      }
+      else if (human == 'Scissors' && computer == 'Paper') {
+        result = "You Win";
+        counterHum++
+      }
+      else if (human == 'Scissors' && computer == 'Scissors') {
+        result = "Tie";
+      }
+      else if (human == 'Paper' && computer == 'Rock') {
+        result = "You Win";
+        counterHum++
+      }
+      else if (human == 'Paper' && computer == 'Scissors') {
+        result = "You Lose";
+        counterComp++
+      }
+      else if (human == 'Paper' && computer == 'Paper') {
+        result = "Tie";
+      }
+      console.log(counterComp);
+      console.log(counterHum);
+      return result;
+    }
+  </script>
+</body>
+
+</html
